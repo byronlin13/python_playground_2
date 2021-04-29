@@ -11,5 +11,5 @@ jobs:
 #     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
       - run: |
-          echo ${{ context }}
+          echo ${{ github }}
           echo "PR created by Dependabot"
