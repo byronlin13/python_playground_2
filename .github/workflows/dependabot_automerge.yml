@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: echo ${{ PR_NUMBER }}
+    - uses: echo ${{ env.PR_NUMBER }}
 #     if: github.actor == 'dependabot[bot]'
 #     steps:
 #       - uses: actions/github-script@v3
