@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo ${{ env.PR_NUMBER }}
+    - run: echo ${{ toJSON(github.event) }}
 #     if: github.actor == 'dependabot[bot]'
 #     steps:
 #       - uses: actions/github-script@v3
