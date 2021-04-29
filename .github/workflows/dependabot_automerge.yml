@@ -12,9 +12,12 @@ jobs:
 
 #     if: github.actor == 'dependabot[bot]'
     steps:
-      - name: automerge
-        run: |
-          echo ${{ github.context}} 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+#       - name: automerge
+#         run: |
 #         uses: actions/github-script@0.2.0
 #         with:
 #           script: |
