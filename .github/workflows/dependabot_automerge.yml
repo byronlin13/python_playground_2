@@ -10,26 +10,21 @@ jobs:
   automerge:
     runs-on: ubuntu-latest
 
-#     if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'dependabot[bot]'
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-#       - name: automerge
-#         run: |
-#         uses: actions/github-script@0.2.0
-#         with:
-#           script: |
-#             github.pullRequests.createReview({
-#               owner: context.payload.repository.owner.login,
-#               repo: context.payload.repository.name,
-#               pull_number: context.payload.pull_request.number,
-#               event: 'APPROVE'
-#             })
-#             github.pullRequests.merge({
-#               owner: context.payload.repository.owner.login,
-#               repo: context.payload.repository.name,
-#               pull_number: context.payload.pull_request.number
-#             })
-#           github-token: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/github-script@v3
+        with:
+          script: |
+            github.pulls.createReview({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: 5
+              event: 'APPROVE'
+            })
+            github.pulls.merge({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: 5,
+              merge_method: 'squash'
+            })
+          github-token: ${{github.token}}
