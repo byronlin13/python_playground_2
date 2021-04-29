@@ -7,7 +7,7 @@ on:
       - completed
 
 env:
-  PR_NUMBER: 1111
+  PR_NUMBER: $GITHUB_REF
 #   PR_NUMBER: ${{ github.event.number }}
 
 
