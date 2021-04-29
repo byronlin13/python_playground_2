@@ -7,7 +7,8 @@ on:
       - completed
 
 env:
-  PR_NUMBER: ${{ github.event.number }}
+  PR_NUMBER: 1111
+#   PR_NUMBER: ${{ github.event.number }}
 
 
 jobs:
