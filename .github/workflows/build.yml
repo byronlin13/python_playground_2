@@ -8,9 +8,15 @@ on:
 jobs:
   check_dependabot:
     runs-on: ubuntu-latest
-#     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github.event.number) }}
-        run: echo "$GITHUB_CONTEXT"
+    - uses: actions/github-script@v3
+      with:
+        script: |
+          core.setFailed('Action failed')
+
+  
+#     steps:
+#       - name: Dump GitHub context
+#         env:
+#           GITHUB_CONTEXT: ${{ toJSON(github.event.number) }}
+#         run: echo "$GITHUB_CONTEXT"
