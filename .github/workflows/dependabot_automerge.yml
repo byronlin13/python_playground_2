@@ -9,7 +9,7 @@ on:
 jobs:
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.actor == 'dependabot[bot]' }}
+#     if: ${{ github.event.workflow_run.conclusion == 'success' && github.actor == 'dependabot[bot]' }}
     steps:
       - uses: actions/github-script@v3
         env:
@@ -27,7 +27,7 @@ jobs:
               repo: context.payload.repository.name,
               pull_number: ${{env.pull_request_number}},
             })
-          github-token: ${{github.token}}
+          github-token: ${{secrets.WRITE_TOKEN}}
 
 
 
