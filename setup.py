@@ -13,5 +13,5 @@ setuptools.setup(
     author='byron',
     packages=setuptools.find_packages(),
     install_requires=requires,
-    license="Apache License 2.0"
+    license="Apache License 2.0z"
 )
