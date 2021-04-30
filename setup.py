@@ -5,7 +5,7 @@ import setuptools
 requires = ['amazon.ion>=0.5.0,<1]
 
 setuptools.setup(
-    name='pythonplayground',
+    name='pythonplaygroundwww',
     version='1.0.1',
     description='description',
     long_description='long_description',
