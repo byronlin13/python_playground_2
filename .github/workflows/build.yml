@@ -8,15 +8,15 @@ on:
 jobs:
   check_dependabot:
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/github-script@v3
-      with:
-        script: |
-          core.setFailed('Action failed')
+#     steps:
+#     - uses: actions/github-script@v3
+#       with:
+#         script: |
+#           core.setFailed('Action failed')
 
   
-#     steps:
-#       - name: Dump GitHub context
-#         env:
-#           GITHUB_CONTEXT: ${{ toJSON(github.event.number) }}
-#         run: echo "$GITHUB_CONTEXT"
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github.event.number) }}
+        run: echo "$GITHUB_CONTEXT"
