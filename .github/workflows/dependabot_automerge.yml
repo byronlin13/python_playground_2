@@ -18,16 +18,17 @@ jobs:
       - uses: actions/github-script@v3
         with:
           script: |
+            echo ${{env.pull_request_number}}
             github.pulls.createReview({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
-              pull_number: ${{env.pull_request_number}},
+              pull_number: ${{env.pull_request_number}} ,
               event: 'APPROVE'
             })
             github.pulls.merge({
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
-              pull_number: ${{env.pull_request_number}},
+              pull_number: ${{env.pull_request_number}} ,
               merge_method: 'squash'
             })
           github-token: ${{github.token}}
