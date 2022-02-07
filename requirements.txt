@@ -1,2 +1,2 @@
-amazon.ion~=0.9.0
+amazon.ion~=0.9.1
 ionhash~=1.2.1
